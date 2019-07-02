@@ -19,7 +19,30 @@ namespace GymRepetitionPrediction
             // Return trained model
             var model = Train(mlContext, _trainDataPath);
 
-            Predict(mlContext, model);
+            // User input data to build prediction around
+            var predictDataModel = GetUserInputData();
+
+            // Predict 
+            Predict(mlContext, model, predictDataModel);
+        }
+
+        /// <summary>
+        /// Returns object with data inserted by user
+        /// </summary>
+        /// <returns></returns>
+        public static GymRepetition GetUserInputData()
+        {
+            var result = new GymRepetition();
+
+            Console.WriteLine("Insert exercise name: ");
+            result.Exercise = Console.ReadLine();
+
+            Console.WriteLine("Insert number of repetitions: ");
+            result.Repetitions = float.Parse(Console.ReadLine());
+
+            result.Weight = 0;
+
+            return result;
         }
 
         /// <summary>
@@ -50,18 +73,11 @@ namespace GymRepetitionPrediction
         /// </summary>
         /// <param name="mlContext"></param>
         /// <param name="model"></param>
-        public static void Predict(MLContext mlContext, ITransformer model)
+        public static void Predict(MLContext mlContext, ITransformer model, GymRepetition predictionData)
         {
             var predictionFunction = mlContext.Model.CreatePredictionEngine<GymRepetition, GymRepetitionPrediction>(model);
-            // Sample data
-            var gymRepetition = new GymRepetition()
-            {
-                Exercise = "Squat",
-                Repetitions = 10,
-                Weight = 0
-            };
 
-            var prediction = predictionFunction.Predict(gymRepetition);
+            var prediction = predictionFunction.Predict(predictionData);
 
             Console.WriteLine("Predicted data");
             Console.WriteLine($"Weight: {prediction.Weight:0.####}");          
