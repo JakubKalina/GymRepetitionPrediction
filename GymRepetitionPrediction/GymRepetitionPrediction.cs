@@ -8,17 +8,17 @@ namespace GymRepetitionPrediction
     public class GymRepetition
     {
         /// <summary>
-        /// Nazwa ćwiczenia
+        /// Exercise name
         /// </summary>
         [LoadColumn(0)]
         public string Exercise;
         /// <summary>
-        /// Ilość powtórzeń
+        /// Performed repetitions
         /// </summary>
         [LoadColumn(1)]
-        public int Repetitions;
+        public float Repetitions;
         /// <summary>
-        /// Obiążenie
+        /// Weight
         /// </summary>
         [LoadColumn(2)]
         public float Weight;
@@ -27,7 +27,7 @@ namespace GymRepetitionPrediction
     public class GymRepetitionPrediction
     {
         /// <summary>
-        /// Przewidywane obciązenies
+        /// Weight
         /// </summary>
         [ColumnName("Score")]
         public float Weight;

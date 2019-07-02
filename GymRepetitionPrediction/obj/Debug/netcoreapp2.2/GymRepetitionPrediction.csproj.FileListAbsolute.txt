@@ -6,3 +6,7 @@ E:\Jakub\Documents\Programowanie\C#\ASP.NET Core\GymRepPrediction\GymRepetitionP
 E:\Jakub\Documents\Programowanie\C#\ASP.NET Core\GymRepPrediction\GymRepetitionPrediction\GymRepetitionPrediction\obj\Debug\netcoreapp2.2\GymRepetitionPrediction.AssemblyInfoInputs.cache
 E:\Jakub\Documents\Programowanie\C#\ASP.NET Core\GymRepPrediction\GymRepetitionPrediction\GymRepetitionPrediction\obj\Debug\netcoreapp2.2\GymRepetitionPrediction.AssemblyInfo.cs
 E:\Jakub\Documents\Programowanie\C#\ASP.NET Core\GymRepPrediction\GymRepetitionPrediction\GymRepetitionPrediction\obj\Debug\netcoreapp2.2\GymRepetitionPrediction.csprojAssemblyReference.cache
+E:\Jakub\Documents\Programowanie\C#\ASP.NET Core\GymRepPrediction\GymRepetitionPrediction\GymRepetitionPrediction\bin\Debug\netcoreapp2.2\GymRepetitionPrediction.pdb
+E:\Jakub\Documents\Programowanie\C#\ASP.NET Core\GymRepPrediction\GymRepetitionPrediction\GymRepetitionPrediction\obj\Debug\netcoreapp2.2\GymRepetitionPrediction.dll
+E:\Jakub\Documents\Programowanie\C#\ASP.NET Core\GymRepPrediction\GymRepetitionPrediction\GymRepetitionPrediction\obj\Debug\netcoreapp2.2\GymRepetitionPrediction.pdb
+E:\Jakub\Documents\Programowanie\C#\ASP.NET Core\GymRepPrediction\GymRepetitionPrediction\GymRepetitionPrediction\bin\Debug\netcoreapp2.2\Data\Zeszyt1.csv
