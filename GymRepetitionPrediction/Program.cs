@@ -1,6 +1,12 @@
 ﻿using Microsoft.ML;
 using System;
 using System.IO;
+using FireSharp.Config;
+using FireSharp.Interfaces;
+using FireSharp.Response;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace GymRepetitionPrediction
 {
@@ -11,8 +17,29 @@ namespace GymRepetitionPrediction
         /// </summary>
         static readonly string _trainDataPath = Path.Combine(Environment.CurrentDirectory, "Data", "Zeszyt1.csv");
 
+        /// <summary>
+        /// Firebase configuration object
+        /// </summary>
+        static IFirebaseConfig config;
+
+        /// <summary>
+        /// Firebase database client
+        /// </summary>
+        static IFirebaseClient client;
+
+        /// <summary>
+        /// List of training data retrieved from database
+        /// </summary>
+        static IEnumerable<GymRepetition> trainingDataList;
+
         static void Main(string[] args)
         {
+            // Configure and connect to Firebase
+            ConfigureFirebase();
+            ConnectClientFIrebase();
+            var task = RetrieveDataFromFirebaseAsync();
+            task.Wait();
+
             // New ML context
             MLContext mlContext = new MLContext(seed: 0);
 
@@ -26,6 +53,35 @@ namespace GymRepetitionPrediction
             Predict(mlContext, model, predictDataModel);
         }
 
+        /// <summary>
+        /// Configure firebase connection
+        /// </summary>
+        public static void ConfigureFirebase()
+        {
+            config = new FirebaseConfig()
+            {
+                AuthSecret = "X2ALVqwVJ9t7M3xMptU4o2gbDhAMSUL0YXYFnD2G",
+                BasePath = "https://gymrepetitionprediction.firebaseio.com/"
+            };
+        }
+
+        /// <summary>
+        /// Establish firebase connection
+        /// </summary>
+        public static void ConnectClientFIrebase()
+        {
+            client = new FireSharp.FirebaseClient(config);
+        }
+
+        /// <summary>
+        /// Retrieve data from Firebase database
+        /// </summary>
+        public static async System.Threading.Tasks.Task RetrieveDataFromFirebaseAsync()
+        {
+            FirebaseResponse response = await client.GetTaskAsync("");
+            var result = JsonConvert.DeserializeObject<List<GymRepetition>>(response.Body);
+            trainingDataList = result;
+        }
         /// <summary>
         /// Returns object with data inserted by user
         /// </summary>
@@ -53,8 +109,10 @@ namespace GymRepetitionPrediction
         /// <returns></returns>
         public static ITransformer Train(MLContext mlContext, string dataPath)
         {
+            IDataView dataView = mlContext.Data.LoadFromEnumerable(trainingDataList);
+
             // Read data from external file
-            IDataView dataView = mlContext.Data.LoadFromTextFile<GymRepetition>(dataPath, hasHeader: true, separatorChar: ';');
+            //IDataView dataViewTest = mlContext.Data.LoadFromTextFile<GymRepetition>(dataPath, hasHeader: true, separatorChar: ';');
 
             // Create pipeline
             var pipeline = mlContext.Transforms.CopyColumns(outputColumnName: "Label", inputColumnName: "Weight").Append(mlContext.Transforms.Categorical.OneHotEncoding(outputColumnName: "ExerciseEncoded", inputColumnName: "Exercise"))

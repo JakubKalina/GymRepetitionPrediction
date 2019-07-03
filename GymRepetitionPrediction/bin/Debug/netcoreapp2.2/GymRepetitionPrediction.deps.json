@@ -1,18 +1,43 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "044915d80c4bcbfdb2f877bb57c9dcdd65e1e1c5"
+    "signature": "dbcd1e9e37fb87c0a383931bf92e9b6ec91e73b6"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.2": {
       "GymRepetitionPrediction/1.0.0": {
         "dependencies": {
+          "FireSharp.Serialization.JsonNet": "1.1.0",
           "Microsoft.ML": "1.1.0",
           "Microsoft.ML.FastTree": "1.1.0"
         },
         "runtime": {
           "GymRepetitionPrediction.dll": {}
+        }
+      },
+      "FireSharp/1.1.0": {
+        "dependencies": {
+          "RestSharp": "104.4.0"
+        },
+        "runtime": {
+          "lib/net45/FireSharp.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        }
+      },
+      "FireSharp.Serialization.JsonNet/1.1.0": {
+        "dependencies": {
+          "FireSharp": "1.1.0",
+          "Newtonsoft.Json": "10.0.3",
+          "RestSharp": "104.4.0"
+        },
+        "runtime": {
+          "lib/net45/FireSharp.Serialization.JsonNet.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
         }
       },
       "Microsoft.CSharp/4.3.0": {
@@ -204,6 +229,14 @@
           "lib/netstandard1.3/Newtonsoft.Json.dll": {
             "assemblyVersion": "10.0.0.0",
             "fileVersion": "10.0.3.21018"
+          }
+        }
+      },
+      "RestSharp/104.4.0": {
+        "runtime": {
+          "lib/net4/RestSharp.dll": {
+            "assemblyVersion": "104.4.0.0",
+            "fileVersion": "104.4.0.0"
           }
         }
       },
@@ -547,6 +580,20 @@
       "serviceable": false,
       "sha512": ""
     },
+    "FireSharp/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FRkskFsuZeaWm/qNHpydFlaUAU+g6PzIgeFZYixkyARXaSzsooDLFmOYKmkNPjQiXWflCI2cVgYCILZYrqa8Uw==",
+      "path": "firesharp/1.1.0",
+      "hashPath": "firesharp.1.1.0.nupkg.sha512"
+    },
+    "FireSharp.Serialization.JsonNet/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Cm2ZuswLT4iPLLpUzKa6oiCKaDv+d1Dc6WxC/xVb19prnQR5zK0jnOfpdVXIabM00SaqzP7kA9l7381FxPSVPA==",
+      "path": "firesharp.serialization.jsonnet/1.1.0",
+      "hashPath": "firesharp.serialization.jsonnet.1.1.0.nupkg.sha512"
+    },
     "Microsoft.CSharp/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -588,6 +635,13 @@
       "sha512": "sha512-hSXaFmh7hNCuEoC4XNY5DrRkLDzYHqPx/Ik23R4J86Z7PE/Y6YidhG602dFVdLBRSdG6xp9NabH3dXpcoxWvww==",
       "path": "newtonsoft.json/10.0.3",
       "hashPath": "newtonsoft.json.10.0.3.nupkg.sha512"
+    },
+    "RestSharp/104.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-noACbS/gvceWlZO4kaV6AepG1cTLtHRhHZftdve+lytX6AIFDk5bdzsq4FfJ2/byAH3Y04I92wlH/z95lb7UwQ==",
+      "path": "restsharp/104.4.0",
+      "hashPath": "restsharp.104.4.0.nupkg.sha512"
     },
     "System.CodeDom/4.4.0": {
       "type": "package",
