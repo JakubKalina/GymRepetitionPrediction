@@ -30,13 +30,13 @@ namespace GymRepetitionPrediction
         /// <summary>
         /// List of training data retrieved from database
         /// </summary>
-        static IEnumerable<GymRepetition> trainingDataList;
+        static List<GymRepetition> trainingDataList;
 
         static void Main(string[] args)
         {
             // Configure and connect to Firebase
             ConfigureFirebase();
-            ConnectClientFIrebase();
+            ConnectClientFirebase();
             var task = RetrieveDataFromFirebaseAsync();
             task.Wait();
 
@@ -68,7 +68,7 @@ namespace GymRepetitionPrediction
         /// <summary>
         /// Establish firebase connection
         /// </summary>
-        public static void ConnectClientFIrebase()
+        public static void ConnectClientFirebase()
         {
             client = new FireSharp.FirebaseClient(config);
         }
@@ -80,7 +80,24 @@ namespace GymRepetitionPrediction
         {
             FirebaseResponse response = await client.GetTaskAsync("");
             var result = JsonConvert.DeserializeObject<List<GymRepetition>>(response.Body);
-            trainingDataList = result;
+            //trainingDataList = result;
+
+            // Test input training data
+            trainingDataList = new List<GymRepetition>()
+            {
+                new GymRepetition()
+                {
+
+                },
+                new GymRepetition()
+                {
+
+                },
+                new GymRepetition()
+                {
+
+                }
+            };
         }
         /// <summary>
         /// Returns object with data inserted by user
@@ -89,15 +106,11 @@ namespace GymRepetitionPrediction
         public static GymRepetition GetUserInputData()
         {
             var result = new GymRepetition();
-
             Console.WriteLine("Insert exercise name: ");
             result.Exercise = Console.ReadLine();
-
             Console.WriteLine("Insert number of repetitions: ");
             result.Repetitions = float.Parse(Console.ReadLine());
-
             result.Weight = 0;
-
             return result;
         }
 
@@ -109,10 +122,10 @@ namespace GymRepetitionPrediction
         /// <returns></returns>
         public static ITransformer Train(MLContext mlContext, string dataPath)
         {
-            IDataView dataView = mlContext.Data.LoadFromEnumerable(trainingDataList);
+            IDataView dataView = mlContext.Data.LoadFromEnumerable<GymRepetition>(trainingDataList);
 
             // Read data from external file
-            //IDataView dataViewTest = mlContext.Data.LoadFromTextFile<GymRepetition>(dataPath, hasHeader: true, separatorChar: ';');
+            IDataView dataViewTest = mlContext.Data.LoadFromTextFile<GymRepetition>(dataPath, hasHeader: true, separatorChar: ';');
 
             // Create pipeline
             var pipeline = mlContext.Transforms.CopyColumns(outputColumnName: "Label", inputColumnName: "Weight").Append(mlContext.Transforms.Categorical.OneHotEncoding(outputColumnName: "ExerciseEncoded", inputColumnName: "Exercise"))
