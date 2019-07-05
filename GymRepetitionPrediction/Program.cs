@@ -87,16 +87,312 @@ namespace GymRepetitionPrediction
             {
                 new GymRepetition()
                 {
-
+                    Exercise = "Squat",
+                    Repetitions = 20,
+                    Weight = 20
                 },
                 new GymRepetition()
                 {
-
+                    Exercise = "Squat",
+                    Repetitions = 20,
+                    Weight = 20
                 },
                 new GymRepetition()
                 {
-
+                    Exercise = "Squat",
+                    Repetitions = 20,
+                    Weight = 20
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Squat",
+                    Repetitions = 18,
+                    Weight = 25
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Squat",
+                    Repetitions = 18,
+                    Weight = 25
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Squat",
+                    Repetitions = 15,
+                    Weight = 30
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Squat",
+                    Repetitions = 15,
+                    Weight = 30
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Squat",
+                    Repetitions = 15,
+                    Weight = 30
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Squat",
+                    Repetitions = 15,
+                    Weight = 30
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Squat",
+                    Repetitions = 10,
+                    Weight = 40
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Squat",
+                    Repetitions = 10,
+                    Weight = 40
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Squat",
+                    Repetitions = 10,
+                    Weight = 40
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Squat",
+                    Repetitions = 10,
+                    Weight = 50
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Squat",
+                    Repetitions = 5,
+                    Weight = 60
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Squat",
+                    Repetitions = 5,
+                    Weight = 60
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Squat",
+                    Repetitions = 5,
+                    Weight = 60
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Pull Up",
+                    Repetitions = 7,
+                    Weight = 0
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Pull Up",
+                    Repetitions = 7,
+                    Weight = 0
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Pull Up",
+                    Repetitions = 5,
+                    Weight = 0
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Pull Up",
+                    Repetitions = 6,
+                    Weight = 0
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 10,
+                    Weight = 10
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 10,
+                    Weight = 20
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 10,
+                    Weight = 25
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 10,
+                    Weight = 25
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 10,
+                    Weight = 25
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Biceps Curl",
+                    Repetitions = 10,
+                    Weight = 10
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Biceps Curl",
+                    Repetitions = 10,
+                    Weight = 12.5f
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Biceps Curl",
+                    Repetitions = 10,
+                    Weight = 12.5f
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Biceps Curl",
+                    Repetitions = 5,
+                    Weight = 15
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Lat Pulldown",
+                    Repetitions = 10,
+                    Weight = 55
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Lat Pulldown",
+                    Repetitions = 10,
+                    Weight = 55
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Lat Pulldown",
+                    Repetitions = 10,
+                    Weight = 55
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Lat Pulldown",
+                    Repetitions = 10,
+                    Weight = 55
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 20,
+                    Weight = 10
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 20,
+                    Weight = 10
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 20,
+                    Weight = 10
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 20,
+                    Weight = 10
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 20,
+                    Weight = 5
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 20,
+                    Weight = 5
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 20,
+                    Weight = 5
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 15,
+                    Weight = 10
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 15,
+                    Weight = 10
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 15,
+                    Weight = 10
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 5,
+                    Weight = 30
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 5,
+                    Weight = 30
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 5,
+                    Weight = 30
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 5,
+                    Weight = 30
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 5,
+                    Weight = 30
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 5,
+                    Weight = 30
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 5,
+                    Weight = 30
+                },
+                new GymRepetition()
+                {
+                    Exercise = "Rack Pull",
+                    Repetitions = 5,
+                    Weight = 30
                 }
+
+
             };
         }
         /// <summary>
@@ -125,7 +421,7 @@ namespace GymRepetitionPrediction
             IDataView dataView = mlContext.Data.LoadFromEnumerable<GymRepetition>(trainingDataList);
 
             // Read data from external file
-            IDataView dataViewTest = mlContext.Data.LoadFromTextFile<GymRepetition>(dataPath, hasHeader: true, separatorChar: ';');
+           // IDataView dataView = mlContext.Data.LoadFromTextFile<GymRepetition>(dataPath, hasHeader: true, separatorChar: ';');
 
             // Create pipeline
             var pipeline = mlContext.Transforms.CopyColumns(outputColumnName: "Label", inputColumnName: "Weight").Append(mlContext.Transforms.Categorical.OneHotEncoding(outputColumnName: "ExerciseEncoded", inputColumnName: "Exercise"))
