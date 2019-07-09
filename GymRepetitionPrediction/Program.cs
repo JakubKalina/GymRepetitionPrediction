@@ -34,23 +34,36 @@ namespace GymRepetitionPrediction
 
         static void Main(string[] args)
         {
-            // Configure and connect to Firebase
-            ConfigureFirebase();
-            ConnectClientFirebase();
-            var task = RetrieveDataFromFirebaseAsync();
-            task.Wait();
+            Console.WriteLine("Choose an option:");
+            Console.WriteLine("1. Add new training data");
+            Console.WriteLine("2. Predict exercise");
+            switch(Int32.Parse(Console.ReadLine()))
+            {
+                case 1:
+                    var newModel = GetUserInput();
+                    var addingTask = AddDataToFirebase(newModel);
+                    addingTask.Wait();
+                    break;
+                case 2:
+                    // Configure and connect to Firebase
+                    ConfigureFirebase();
+                    ConnectClientFirebase();
+                    var task = RetrieveDataFromFirebaseAsync();
+                    task.Wait();
 
-            // New ML context
-            MLContext mlContext = new MLContext(seed: 0);
+                    // New ML context
+                    MLContext mlContext = new MLContext(seed: 0);
 
-            // Return trained model
-            var model = Train(mlContext, _trainDataPath);
+                    // Return trained model
+                    var model = Train(mlContext, _trainDataPath);
 
-            // User input data to build prediction around
-            var predictDataModel = GetUserInputData();
+                    // User input data to build prediction around
+                    var predictDataModel = GetUserInputData();
 
-            // Predict 
-            Predict(mlContext, model, predictDataModel);
+                    // Predict 
+                    Predict(mlContext, model, predictDataModel);
+                    break;
+            }
         }
 
         /// <summary>
@@ -395,6 +408,35 @@ namespace GymRepetitionPrediction
 
             };
         }
+
+
+        /// <summary>
+        /// Add new data to Firebase database
+        /// </summary>
+        public static async System.Threading.Tasks.Task AddDataToFirebase(GymRepetition newModel)
+        {
+            SetResponse response = await client.SetTaskAsync("gymrepetitionprediction/15", newModel);
+            GymRepetition result = response.ResultAs<GymRepetition>();
+
+            Console.WriteLine(result);
+        }
+
+        /// <summary>
+        /// Returns object that consist of data inserted by user
+        /// </summary>
+        /// <returns></returns>
+        public static GymRepetition GetUserInput()
+        {
+            var result = new GymRepetition();
+            Console.WriteLine("Exercise name: ");
+            result.Exercise = Console.ReadLine();
+            Console.WriteLine("Number of repetitions: ");
+            result.Repetitions = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Used weight: ");
+            result.Weight = Int32.Parse(Console.ReadLine());
+            return result;
+        }
+
         /// <summary>
         /// Returns object with data inserted by user
         /// </summary>
